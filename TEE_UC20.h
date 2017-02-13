@@ -49,9 +49,32 @@ public:
 	virtual size_t write(uint8_t byte);
 
 	// NAzT
-    virtual size_t write(const uint8_t *buf, size_t size) {
+  virtual size_t write(const uint8_t *buf, size_t size) {
+		Serial.println("NAzT::  operator size_t write(const uint8_t *buf, size_t size)");
+	};
 
-    };
+	virtual uint8_t connected() {
+		Serial.println("NAzT::  operator connected()");
+	};
+
+	virtual void stop() {
+		Serial.println("NAzT::  operator stop()");
+	};
+
+	operator bool(){
+		Serial.println("NAzT::  operator bool()");
+	};
+	virtual int connect(IPAddress ip, uint16_t port) {
+		Serial.println("NAzT::  connect(IPAddress ip, uint16_t port)");
+	};
+
+	virtual int connect(const char *host, uint16_t port) {
+		Serial.println("NAzT::  connect(const char *host, uint16_t port)");
+	};
+
+	virtual int read(uint8_t *buf, size_t size) {
+		Serial.println("NAzT::  connect(IPAddress ip, uint16_t port)");
+	};
 	int read();
     int available();
     virtual void flush();
